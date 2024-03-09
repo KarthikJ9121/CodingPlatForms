@@ -13,14 +13,14 @@
 
 ## Thought Process
 
-- Point to be noted ** arrays are in sorted order **
+- Point to be noted **arrays are in sorted order**
 - take two pointers pointing to each array
 
 **Cases :**
     <br>
-    ` if both has common element then this must be the first and minimum element ` **return it**
+    ` if both has common element then this must be the first and minimum element ` **return it** </br>
     ` if a[i] < b[j] and not matched, there may be common element in the later part which matches with the b[j] `  
-        **increment i - keep j as it is**
+        **increment i - keep j as it is** </br>
     ` if b[i] < a[i] and not matched, there may be common element in the later part which matches with a[i] `
         **increment j - keep i as it is**
 
@@ -50,8 +50,8 @@
 
 ## Time Complexity
 
-** Time complexity: **  O(min(n, m))
-** Space complexity: ** O(1)
+**Time complexity:**  O(min(n, m))
+**Space complexity:** O(1)
 
 </hr>
 
@@ -78,8 +78,8 @@
 
 ### Time Complexity
 
-** Time complexity: **  O(n + m)
-** Space complexity: ** O(n)
+**Time complexity:**  O(n + m) </br>
+**Space complexity:** O(n)
 
 </hr>
 
@@ -88,38 +88,35 @@
 ### C++
 
 ``` C++
-    
-    class Solution {
-public:
-    int getCommon(vector<int>& a, vector<int>& b) 
+
+int getCommon(vector<int>& a, vector<int>& b) 
+{
+    int n = a.size(), m = b.size();
+    int i = 0, j = 0;
+
+    while(i < n && j < m)
     {
-        int n = a.size(), m = b.size();
-        int i = 0, j = 0;
-
-        while(i < n && j < m)
-        {
-            if(a[i] == b[j])
-                return a[i];
-            else if(a[i] < b[j])
-                i++;
-            else if(b[j] < a[i])
-                j++;
-        }
-        return -1; 
-
-        // Second Approach 
-        
-        unordered_map<int, int> mpp;
-        for(int i : a)
-            mpp[i]++;
-        
-        for(int i : b)
-            if(mpp[i] > 0)
-                return i;
-        
-        return -1;
+        if(a[i] == b[j])
+            return a[i];
+        else if(a[i] < b[j])
+            i++;
+        else if(b[j] < a[i])
+            j++;
     }
-};
+    return -1; 
+
+    // Second Approach 
+    
+    unordered_map<int, int> mpp;
+    for(int i : a)
+        mpp[i]++;
+    
+    for(int i : b)
+        if(mpp[i] > 0)
+            return i;
+    
+    return -1;
+}
 
 ```
 
@@ -128,42 +125,38 @@ public:
 ``` Java 
 
 import java.util.HashMap;
+public int[] getCommon(int[] a, int[] b) {
+    // Approach 1 - Two Pointers
+    int[] result = new int[2];
+    int n = a.length, m = b.length;
+    int i = 0, j = 0;
 
-class Solution {
-    public int[] getCommon(int[] a, int[] b) {
-        // Approach 1 - Two Pointers
-        int[] result = new int[2];
-        int n = a.length, m = b.length;
-        int i = 0, j = 0;
+    while (i < n && j < m) {
+        if (a[i] == b[j]) {
+            result[0] = a[i];
+            break;
+        } else if (a[i] < b[j]) {
+            i++;
+        } else if (b[j] < a[i]) {
+            j++;
+        }
+    }
 
-        while (i < n && j < m) {
-            if (a[i] == b[j]) {
-                result[0] = a[i];
-                break;
-            } else if (a[i] < b[j]) {
-                i++;
-            } else if (b[j] < a[i]) {
-                j++;
-            }
+    if (result[0] == 0) return new int[]{-1};
+
+    // Approach 2 - HashMap
+    HashMap<Integer, Integer> map = new HashMap<>();
+    for (int num : a)
+        map.put(num, map.getOrDefault(num, 0) + 1);
+
+    for (int num : b)
+        if (map.containsKey(num)) {
+            result[1] = num;
+            return result;
         }
 
-        if (result[0] == 0) return new int[]{-1};
-
-        // Approach 2 - HashMap
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int num : a)
-            map.put(num, map.getOrDefault(num, 0) + 1);
-
-        for (int num : b)
-            if (map.containsKey(num)) {
-                result[1] = num;
-                return result;
-            }
-
-        return new int[]{-1};
-    }
+    return new int[]{-1};
 }
-
 
 ```
 
@@ -171,38 +164,37 @@ class Solution {
 
 ``` Python
 
-    from typing import List
+from typing import List
 
-class Solution:
-    def getCommon(self, a: List[int], b: List[int]) -> List[int]:
-        # Approach 1 - Two Pointers
-        result = [0, 0]
-        n, m = len(a), len(b)
-        i, j = 0, 0
+def getCommon(self, a: List[int], b: List[int]) -> List[int]:
+    # Approach 1 - Two Pointers
+    result = [0, 0]
+    n, m = len(a), len(b)
+    i, j = 0, 0
 
-        while i < n and j < m:
-            if a[i] == b[j]:
-                result[0] = a[i]
-                break
-            elif a[i] < b[j]:
-                i += 1
-            elif b[j] < a[i]:
-                j += 1
+    while i < n and j < m:
+        if a[i] == b[j]:
+            result[0] = a[i]
+            break
+        elif a[i] < b[j]:
+            i += 1
+        elif b[j] < a[i]:
+            j += 1
 
-        if result[0] == 0:
-            return [-1]
-
-        # Approach 2 - HashMap
-        map_a = {}
-        for num in a:
-            map_a[num] = map_a.get(num, 0) + 1
-
-        for num in b:
-            if num in map_a:
-                result[1] = num
-                return result
-
+    if result[0] == 0:
         return [-1]
+
+    # Approach 2 - HashMap
+    map_a = {}
+    for num in a:
+        map_a[num] = map_a.get(num, 0) + 1
+
+    for num in b:
+        if num in map_a:
+            result[1] = num
+            return result
+
+    return [-1]
 
 
 ```
@@ -212,39 +204,39 @@ class Solution:
 
 ``` JavaScript
 
-    class Solution {
-    getCommon(a, b) {
-        // Approach 1 - Two Pointers
-        const result = [0, 0];
-        let i = 0, j = 0;
-        const n = a.length, m = b.length;
 
-        while (i < n && j < m) {
-            if (a[i] === b[j]) {
-                result[0] = a[i];
-                break;
-            } else if (a[i] < b[j]) {
-                i++;
-            } else if (b[j] < a[i]) {
-                j++;
-            }
+getCommon(a, b) {
+    // Approach 1 - Two Pointers
+    const result = [0, 0];
+    let i = 0, j = 0;
+    const n = a.length, m = b.length;
+
+    while (i < n && j < m) {
+        if (a[i] === b[j]) {
+            result[0] = a[i];
+            break;
+        } else if (a[i] < b[j]) {
+            i++;
+        } else if (b[j] < a[i]) {
+            j++;
+        }
+    }
+
+    if (result[0] === 0) return [-1];
+
+    // Approach 2 - HashMap
+    const map = new Map();
+    for (const num of a)
+        map.set(num, (map.get(num) || 0) + 1);
+
+    for (const num of b)
+        if (map.has(num)) {
+            result[1] = num;
+            return result;
         }
 
-        if (result[0] === 0) return [-1];
-
-        // Approach 2 - HashMap
-        const map = new Map();
-        for (const num of a)
-            map.set(num, (map.get(num) || 0) + 1);
-
-        for (const num of b)
-            if (map.has(num)) {
-                result[1] = num;
-                return result;
-            }
-
-        return [-1];
-    }
+    return [-1];
 }
 
 ```
+
