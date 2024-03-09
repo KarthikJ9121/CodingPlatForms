@@ -17,21 +17,23 @@
 
 - Point to be noted ** arrays are in sorted order **
 - take two pointers pointing to each array
-** Cases : **
-    ` if both has common element then this must be the first and minimum element ` ** return it **
-    ` if a[i] < b[j] and not matched, there may be common element in the later part which matches with the b[j] `  
-        ** increment i - keep j as it is **
-    ` if b[i] < a[i] and not matched, there may be common element in the later part which matches with a[i] `
-        ** increment j - keep i as it is **
 
-## PseudoCode
+**Cases :**
+    <br>
+    ` if both has common element then this must be the first and minimum element ` **return it**
+    ` if a[i] < b[j] and not matched, there may be common element in the later part which matches with the b[j] `  
+        **increment i - keep j as it is**
+    ` if b[i] < a[i] and not matched, there may be common element in the later part which matches with a[i] `
+        **increment j - keep i as it is**
+
+### PseudoCode
 
 ```bash
 
     Set n = size of array a
     Set m = size of array b
 
-    ** Pointers **
+    *** POINTERS ***
 
     Set i = 0
     Set j = 0
@@ -48,8 +50,6 @@
 
 ```
 
-</hr>
-
 ## Time Complexity
 
 ** Time complexity: **  O(min(n, m))
@@ -60,8 +60,10 @@
 ## Thought Process
 
 - Create a map and push elements of any array
-- iterate the other to find if it matched with any of the element in the map, if yes its count must be > 0
-** if found return it **
+- iterate the other to find if it matched with any of the element in the map, if yes its count > 0
+**if found return it**
+
+### PseudoCode
 
 ```bash
     
@@ -76,14 +78,14 @@
 
 ```
 
-</hr>
-
-## Time Complexity
+### Time Complexity
 
 ** Time complexity: **  O(n + m)
 ** Space complexity: ** O(n)
 
-## Code Of languages
+</hr>
+
+## Codes
 
 ### C++
 
@@ -127,7 +129,7 @@ public:
 
 ``` Java 
 
-    import java.util.HashMap;
+import java.util.HashMap;
 
 class Solution {
     public int[] getCommon(int[] a, int[] b) {
