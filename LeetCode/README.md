@@ -3,7 +3,7 @@
 
 # Minimum Common Value
 
-### [Problem Link](https://leetcode.com/problems/minimum-common-value/description/?envType=daily-question envId=2024-03-09)
+### [Problem Link] (https://leetcode.com/problems/minimum-common-value/description/?envType=daily-question envId=2024-03-09)
 
 </hr>
 
@@ -14,16 +14,18 @@
 </hr>
 
 ## Thought Process
-    - Point to be noted ** arrays are in sorted order **
-    - take two pointers pointing to each array
-    ** Cases : **
-        ` if both has common element then this must be the first and minimum element ` ** return it **
-        ` if a[i] < b[j] and not matched, there may be common element in the later part which matches with the b[j] `  
-               ** increment i - keep j as it is **
-        ` if b[i] < a[i] and not matched, there may be common element in the later part which matches with a[i] `
-               ** increment j - keep i as it is **
+
+- Point to be noted ** arrays are in sorted order **
+- take two pointers pointing to each array
+** Cases : **
+    ` if both has common element then this must be the first and minimum element ` ** return it **
+    ` if a[i] < b[j] and not matched, there may be common element in the later part which matches with the b[j] `  
+        ** increment i - keep j as it is **
+    ` if b[i] < a[i] and not matched, there may be common element in the later part which matches with a[i] `
+        ** increment j - keep i as it is **
 
 ## PseudoCode
+
 ```bash
 
     Set n = size of array a
@@ -49,16 +51,17 @@
 </hr>
 
 ## Time Complexity
-    ** Time complexity: **  O(min(n, m))
-    ** Space complexity: ** O(1)
+
+** Time complexity: **  O(min(n, m))
+** Space complexity: ** O(1)
 
 </hr>
 
 ## Thought Process
 
-    - Create a map and push elements of any array
-    - iterate the other to find if it matched with any of the element in the map, if yes its count must be > 0
-        ** if found return it **
+- Create a map and push elements of any array
+- iterate the other to find if it matched with any of the element in the map, if yes its count must be > 0
+** if found return it **
 
 ```bash
     
@@ -76,12 +79,13 @@
 </hr>
 
 ## Time Complexity
-    ** Time complexity: **  O(n + m)
-    ** Space complexity: ** O(n)
+
+** Time complexity: **  O(n + m)
+** Space complexity: ** O(n)
 
 ## Code Of languages
 
-    ### C++
+### C++
 
 ``` C++
     
@@ -119,6 +123,7 @@ public:
 
 ```
 
+### Java
 
 ``` Java 
 
@@ -162,6 +167,8 @@ class Solution {
 
 ```
 
+### Python
+
 ``` Python
 
     from typing import List
@@ -199,6 +206,9 @@ class Solution:
 
 
 ```
+
+### JavaScipt
+
 
 ``` JavaScript
 
