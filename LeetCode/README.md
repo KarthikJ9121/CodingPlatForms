@@ -1,9 +1,7 @@
 ## You can find the [Leetcode](https://leetcode.com/) problems with the Links Here 
-
-
 # Minimum Common Value
 
-### [Problem Link] (https://leetcode.com/problems/minimum-common-value/description/?envType=daily-question envId=2024-03-09)
+### [Problem Link](https://leetcode.com/problems/minimum-common-value/description/?envType=daily-questionenvId=2024-03-09)
 
 </hr>
 
@@ -250,4 +248,3 @@ class Solution:
 }
 
 ```
-
