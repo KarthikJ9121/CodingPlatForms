@@ -2,7 +2,7 @@
 
 # Minimum Common Value
 
-### [Problem Link](https://leetcode.com/problems/minimum-common-value/description/?envType=daily-questionenvId=2024-03-09){target="_blank"}
+### [Problem Link](https://leetcode.com/problems/minimum-common-value/description/?envType=daily-questionenvId=2024-03-09)(target="_blank")
 
 </hr>
 
