@@ -1,17 +1,18 @@
 ## You can find the [Leetcode](https://leetcode.com/) problems with the Links Here 
+
 # Minimum Common Value
 
-### [Problem Link](https://leetcode.com/problems/minimum-common-value/description/?envType=daily-questionenvId=2024-03-09)
+### [Problem Link](https://leetcode.com/problems/minimum-common-value/description/?envType=daily-questionenvId=2024-03-09){:target="_blank"}
 
 </hr>
 
-## Coding Question
+## Question
 
  Given two integer arrays nums1 and nums2, sorted in non-decreasing order, return the minimum integer common to both arrays. If there is no common integer amongst nums1 and nums2, return -1. Note that an integer is said to be common to nums1 and nums2 if both arrays have at least one occurrence of that integer.
 
 </hr>
 
-## Thought Process
+## Thought Process and Approaches
 
 - Point to be noted **arrays are in sorted order**
 - take two pointers pointing to each array
@@ -50,7 +51,7 @@
 
 ## Time Complexity
 
-**Time complexity:**  O(min(n, m))
+**Time complexity:**  O(min(n, m)) </br>
 **Space complexity:** O(1)
 
 </hr>
@@ -127,14 +128,12 @@ int getCommon(vector<int>& a, vector<int>& b)
 import java.util.HashMap;
 public int[] getCommon(int[] a, int[] b) {
     // Approach 1 - Two Pointers
-    int[] result = new int[2];
     int n = a.length, m = b.length;
     int i = 0, j = 0;
 
     while (i < n && j < m) {
         if (a[i] == b[j]) {
-            result[0] = a[i];
-            break;
+            return a[i];
         } else if (a[i] < b[j]) {
             i++;
         } else if (b[j] < a[i]) {
@@ -142,7 +141,7 @@ public int[] getCommon(int[] a, int[] b) {
         }
     }
 
-    if (result[0] == 0) return new int[]{-1};
+    return -1;
 
     // Approach 2 - HashMap
     HashMap<Integer, Integer> map = new HashMap<>();
@@ -151,11 +150,10 @@ public int[] getCommon(int[] a, int[] b) {
 
     for (int num : b)
         if (map.containsKey(num)) {
-            result[1] = num;
-            return result;
+            return num;
         }
 
-    return new int[]{-1};
+    return -1;
 }
 
 ```
@@ -168,21 +166,18 @@ from typing import List
 
 def getCommon(self, a: List[int], b: List[int]) -> List[int]:
     # Approach 1 - Two Pointers
-    result = [0, 0]
     n, m = len(a), len(b)
     i, j = 0, 0
 
     while i < n and j < m:
         if a[i] == b[j]:
-            result[0] = a[i]
-            break
+            return a[i]
         elif a[i] < b[j]:
             i += 1
         elif b[j] < a[i]:
             j += 1
 
-    if result[0] == 0:
-        return [-1]
+    return -1
 
     # Approach 2 - HashMap
     map_a = {}
@@ -191,10 +186,9 @@ def getCommon(self, a: List[int], b: List[int]) -> List[int]:
 
     for num in b:
         if num in map_a:
-            result[1] = num
-            return result
+            return num
 
-    return [-1]
+    return -1
 
 
 ```
@@ -205,16 +199,16 @@ def getCommon(self, a: List[int], b: List[int]) -> List[int]:
 ``` JavaScript
 
 
-getCommon(a, b) {
+getCommon(a, b) 
+{
     // Approach 1 - Two Pointers
-    const result = [0, 0];
     let i = 0, j = 0;
     const n = a.length, m = b.length;
 
-    while (i < n && j < m) {
+    while (i < n && j < m) 
+    {
         if (a[i] === b[j]) {
-            result[0] = a[i];
-            break;
+            return a[i];
         } else if (a[i] < b[j]) {
             i++;
         } else if (b[j] < a[i]) {
@@ -222,7 +216,7 @@ getCommon(a, b) {
         }
     }
 
-    if (result[0] === 0) return [-1];
+    return -1;
 
     // Approach 2 - HashMap
     const map = new Map();
@@ -231,11 +225,10 @@ getCommon(a, b) {
 
     for (const num of b)
         if (map.has(num)) {
-            result[1] = num;
-            return result;
+           return num;
         }
 
-    return [-1];
+    return -1;
 }
 
 ```
