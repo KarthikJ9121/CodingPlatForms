@@ -2,7 +2,7 @@
 
 # Minimum Common Value
 
-### [Problem Link](https://leetcode.com/problems/minimum-common-value/description/?envType=daily-questionenvId=2024-03-09){:target="_blank"}
+### [Problem Link](https://leetcode.com/problems/minimum-common-value/description/?envType=daily-questionenvId=2024-03-09){target="_blank"}
 
 </hr>
 
@@ -18,11 +18,11 @@
 - take two pointers pointing to each array
 
 **Cases :**
-    <br>
-    ` if both has common element then this must be the first and minimum element ` **return it** </br>
-    ` if a[i] < b[j] and not matched, there may be common element in the later part which matches with the b[j] `  
+<br>
+    * if both has common element then this must be the first and minimum element  **return it** </br>
+    * if a[i] < b[j] and not matched, there may be common element in the later part which matches with the b[j]  
         **increment i - keep j as it is** </br>
-    ` if b[i] < a[i] and not matched, there may be common element in the later part which matches with a[i] `
+    * if b[i] < a[i] and not matched, there may be common element in the later part which matches with a[i] 
         **increment j - keep i as it is**
 
 ### PseudoCode
