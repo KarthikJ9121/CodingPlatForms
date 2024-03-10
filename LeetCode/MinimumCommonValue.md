@@ -58,8 +58,6 @@
 
 </hr>
 
-## Thought Process 
-
 ### Second Approach
 
 - Create a map and push elements of any array
