@@ -19,8 +19,6 @@
 
 **Cases :**
 
-<br>
-
 - if both has common element then this must be the first and minimum element  **return it** </br>
 - if a[i] < b[j] and not matched, there may be common element in the later part which matches with the b[j]  
         **increment i - keep j as it is** </br>
