@@ -51,7 +51,7 @@
 
 ```
 
-## Complexity Analysis
+### Complexity Analysis
 
 **Time complexity:**  O(min(n, m)) </br>
 **Space complexity:** O(1)
