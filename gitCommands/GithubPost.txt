@@ -1,0 +1,249 @@
+- Brute Better Optimal
+- Java, cpp, pyt, js
+- algorithm, thought process, intuition, and the logic 
+- generate the code of the algorithm
+
+
+# Question Title
+
+### [Problem Link]()
+
+</hr>
+
+## Question
+
+
+</hr>
+
+## Thought Process and Approaches
+
+### First Approach
+
+
+
+### PseudoCode
+
+```bash
+
+   
+
+```
+
+### Complexity Analysis
+
+**Time complexity:**   </br>
+**Space complexity:** 
+
+</hr>
+
+### Second Approach
+
+
+
+### PseudoCode
+
+```bash
+    
+  
+
+```
+
+### Complexity Analysis
+
+**Time complexity:**   </br>
+**Space complexity:** 
+
+</hr>
+
+## Codes
+
+### C++
+
+``` C++
+
+
+```
+
+### Java
+
+``` Java 
+
+
+```
+
+### Python
+
+``` Python
+
+
+```
+
+### JavaScipt
+
+
+``` JavaScript
+
+```
+
+
+
+
+
+
+Question Title
+(You'll provide the title of the question manually)
+
+[Problem Link](You'll provide the link manually)
+</hr>
+Question
+(You'll provide the question manually)
+
+</hr>
+Thought Process and Approaches
+Recursion Approach
+In this approach, we'll utilize recursion to solve the problem. We'll define a recursive function to compute the Fibonacci sequence.
+
+PseudoCode
+bash
+Copy code
+function fib(n):
+    if n is 0:
+        return 0
+    if n is 1:
+        return 1
+    return fib(n-1) + fib(n-2)
+Complexity Analysis
+Time complexity:
+The time complexity of this approach is exponential, O(2^n), as each call to the fib() function results in two recursive calls, leading to an exponential increase in the number of function calls.
+
+Space complexity:
+The space complexity is also exponential, O(n), as it requires memory proportional to the depth of the recursive calls, which is equal to the value of n.
+Time complexity: O(n^2) </br>
+Space complexity: O(n)
+
+</hr>
+Memoization Approach
+In this approach, we'll use memoization to optimize the recursive solution by storing the results of subproblems to avoid redundant calculations.
+
+PseudoCode
+bash
+Copy code
+function fib_memo(n, memo):
+    if n is 0:
+        return 0
+    if n is 1:
+        return 1
+    if memo[n] is not defined:
+        memo[n] = fib_memo(n-1, memo) + fib_memo(n-2, memo)
+    return memo[n]
+Complexity Analysis
+Time complexity:
+The time complexity of this approach is linear, O(n), as each subproblem is calculated once and stored in the memo array.
+
+Space complexity:
+The space complexity is also linear, O(n), as we need extra space to store the results of subproblems in the memo array.
+Time complexity: O(n) </br>
+Space complexity: O(n)
+
+</hr>
+Tabulation Approach
+In this approach, we'll use tabulation to iteratively calculate the Fibonacci sequence bottom-up, storing the results in an array.
+
+PseudoCode
+bash
+Copy code
+function fib_tab(n):
+    if n is 0:
+        return 0
+    if n is 1:
+        return 1
+    tab = [0] * (n+1)
+    tab[1] = 1
+    for i from 2 to n:
+        tab[i] = tab[i-1] + tab[i-2]
+    return tab[n]
+Complexity Analysis
+Time complexity:
+The time complexity of this approach is linear, O(n), as it iterates through the array once to calculate each Fibonacci number.
+
+Space complexity:
+The space complexity is linear, O(n), as we need an array of size n+1 to store the results of Fibonacci numbers.
+Time complexity: O(n) </br>
+Space complexity: O(n)
+
+</hr>
+Space Optimization Approach
+In this approach, we'll optimize the space complexity by only storing the last two Fibonacci numbers instead of the entire array.
+
+PseudoCode
+bash
+Copy code
+function fib_space_optimized(n):
+    if n is 0:
+        return 0
+    if n is 1:
+        return 1
+    a = 0
+    b = 1
+    for i from 2 to n:
+        c = a + b
+        a = b
+        b = c
+    return b
+Complexity Analysis
+Time complexity:
+The time complexity of this approach is linear, O(n), as it iterates through the loop to calculate each Fibonacci number.
+
+Space complexity:
+The space complexity is constant, O(1), as we only need a few variables to store the current and previous Fibonacci numbers.
+Time complexity: O(n) </br>
+Space complexity: O(1)
+
+</hr>
+Codes
+C++
+C++
+Copy code
+int fib(int n) {
+    if(n==0) return 0;
+    if(n==1) return 1;
+    return fib(n-1) + fib(n-2); 
+}
+Java
+Java
+Copy code
+public class Solution {
+    public int fib(int n) {
+        if(n==0) return 0;
+        if(n==1) return 1;
+        return fib(n-1) + fib(n-2); 
+    }
+}
+Python
+Python
+Copy code
+def fib(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fib(n-1) + fib(n-2)
+JavaScript
+JavaScript
+Copy code
+function fib(n) {
+    if(n === 0) return 0;
+    if(n === 1) return 1;
+    return fib(n-1) + fib(n-2); 
+}
+
+
+
+
+
+
+
+
+
+
+

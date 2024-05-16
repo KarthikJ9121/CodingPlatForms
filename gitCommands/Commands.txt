@@ -1,0 +1,228 @@
+			GIT COMMANDS -sudo apt install git
+
+-MAIN
+.git config --global http.proxy http://username:password@proxy_server:port
+.git config --global https.proxy https://username:password@proxy_server:port
+
+.git init {initializes to track the files in the localRepo}
+.git config --global user.name = "<username>"
+.git config --global user.email = "<userMail>"
+.git config --global ui.auto = auto
+.git config --list / git config -l
+   .git config --list | grep user
+   .git config --list | grep email
+.git config --global --unset user.name
+.git config --global --unset user.email
+.git config --global --unset-all user.name
+.git config --global --unset-all user.email
+.git config --unset-all user.name
+.git config --unset-all user.email
+
+.nano ~/.gitconfig
+- CREDENTIAL MANAGER -> WINDOW CREDENTIALS
+
+
+
+- REMOTE - LOCAL
+.git clone <URL>
+.git remote -v {lists the details of the configured repo}
+.git remote add origin <url> {used to configure  a remote}
+.git add -A, git add ., git add <file1> <file2>
+	.git reset <fileName> {to undo addtns}
+	.git reset
+.git commit -m "<CommitMsg>"
+.git commit -am "<CommitMsg>"
+	.git log {lists all the commits}
+	.git reset HEAD ~ 1 {to undo after commits}
+	.git reset <commitHash>
+	.git reset --head <commitHash>
+.git push
+.git pull origin main {merges two branches}
+.git status
+
+
+- BRANCH
+.git branch
+.git checkout <branchName> {navigates}
+.git branch -m <branchName> {rename branch}
+.git checkout -b <branchName> {create New Branch }
+.git branch -d <branchName>
+.git diff <branchName>
+.git diff --staged
+.git merge <branchName> {to current branch}
+.git push -u origin <branchName>
+.git push origin <branchName> - git push origin main {first time need to pushed to <branchName>}
+ 
+- PULL / do this 
+if 
+ ! [rejected]        main -> main (fetch first)
+
+git fetch <origin>
+git merge <origin> main
+git push origin main 
+
+
+
+
+				READme	
+.#	{h1}
+.##	{h2}
+.###	{h3}
+. -/*	{bullet}
+.[<name>](<resource>)
+.[<name>](<#resource - navigate to the same page>)
+.** <text> ** {bolds text}
+.![<text>](resource - from assets) {image}
+.```<language> <text> ```
+.`<text>`  	{labels the text}
+
+
+
+
+				COMMAND LINE
+.cd <path>
+.cd ..
+.cd ~ / cd <space>
+.mkdir <dir>
+.pwd
+
+
+- FILES
+.ls
+.ls - a
+.ls -l -h
+.ls -l -h --block_size = KB
+.ls --help
+.man <cmd>
+
+.touch <fileName>
+.nano <fileName>
+.cat <file>
+.echo "<content>"
+.echo "<content>" > <file>
+.mv <src> <dest>
+.cp <src> <dest>
+.rm <fileName>
+.rm -r <dir>
+.mv <src> <dest>
+.cp <filePath> <dir>
+
+.head -N <fileName>
+.tail -N <fileName>
+.wc <fileName>
+.cat <fileName> | grep "<pattern>"
+.head -N <fileName> | tail -5 | grep "<pattern>"
+.cat <fileName> | head -N > <fileName>
+
+
+
+- DIRECTORIES
+.cd path/to/directory
+.mkdir new_folder
+.rmdir folder_to_delete
+.dir
+.tree
+.xcopy source destination /s /e
+.robocopy source destination /mir
+.move file_to_move destination_folder
+.ren old_name new_name
+
+.copy source_file destination_file
+.del file_to_delete
+
+# Display the contents of a text file
+.type file.txt
+
+# Display the contents of a text file, one screen at a time
+.more file.txt
+
+# Open a text file in Notepad
+.notepad file.txt
+
+# Search for text within files
+.find "search_term" file.txt
+
+# Search for strings in files
+findstr "search_term" file.txt
+
+# Compare two files or sets of files
+fc file1.txt file2.txt
+
+# Display or modify file extension associations
+assoc .txt
+
+# Display or modify file type associations
+ftype txtfile
+
+
+-COMPRESSING AND DECOMPRESSING
+.tar -czvf <zipFileName>.tar.gz <path1> <path2> etc
+.tar -xzvf <zipFileName>.tar.gz -c <path>
+
+.zip -r <zipFileNmae>.zip <file> <dir1>
+.unzip <zipFileName>.zip -d path
+
+-FILE PERMISSIONS
+.sudo chmod 765 <fileName>
+.sudo chown <userName> <file>
+.sudo chown <userName> : <group> <file>
+
+- USER
+.date
+.whoami
+.history
+.cat -bash_history
+.exit
+
+- ROOT
+.sudo <cmd>
+.which <cmd>
+.sudo useradd <userName>
+.sudo passwd <userName>
+su -c <cmd> <user>
+
+
+
+- PACKAGE MANAGERS
+.sudo apt upgrade
+.sudo apt update
+sudo dpkg -l 		{list all the installed package}
+.sudo apt install wget {downloads content from net to system}
+	.wget "URL"
+.curl "URL" {prints content of the url}
+.sudo apt-cache <pkgName>
+
+.sudo add-apt-repository <repLink>
+.sudo apt-key add-<keyID>
+.sudo apt remove <pkgName>
+
+
+-NETWORK CONNECTIVITY
+.ifconfig
+.lo
+.ping <hostName>
+.traceRoute <hostAddress>
+
+-ENVIRONMENT - .bashrc ~/bashrc-profileq
+.env
+.export <var_name>
+.export $<var_name>
+.echo $path
+.alias <name> = <value>
+.unalias <alias_name>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
