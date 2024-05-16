@@ -9,6 +9,7 @@
  - [bootstrap](https://getbootstrap.com/)
  - [Mdn Developers](https://developer.mozilla.org/en-US/)
 	- [HTML Entities](https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references)
+  - [API Testing]()
 
 <hr/>
 
